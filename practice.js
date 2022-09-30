@@ -182,7 +182,14 @@ var dessertCategories = function(desserts) {
   }
 */
 var countMessagesPerUser = function(tweets) {
-
+  return _.reduce(tweets, function(tweetsPerUser, tweet) {
+    if (tweetsPerUser.hasOwnProperty(tweet.user)) {
+      tweetsPerUser[tweet.user]++;
+    } else {
+      tweetsPerUser[tweet.user] = 1;
+    }
+    return tweetsPerUser;
+  }, {});
 };
 
 // given an array of movie data objects,return an array containing
