@@ -160,7 +160,14 @@ var sumTotal = function(products) {
 // return an object consisting of dessert types and how many of each.
 // exampleOutput: { dessertType: 3, dessertType2: 1 }
 var dessertCategories = function(desserts) {
-
+  return _.reduce(desserts, function(categories, dessert) {
+    if (categories.hasOwnProperty(dessert.type)) {
+      categories[dessert.type]++;
+    } else {
+      categories[dessert.type] = 1;
+    }
+    return categories;
+  }, {});
 };
 
 // return an object with the proper count of all user messages
