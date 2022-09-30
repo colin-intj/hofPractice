@@ -102,7 +102,10 @@ var upperCaseFruits = function(fruits) {
 // that have a new "glutenFree" property, with a boolean value.
 // TIP: Items that contain flour are not gluten-free.
 var glutenFree = function(desserts) {
-
+  return _.map(desserts, function(dessert) {
+    dessert.glutenFree = !!~dessert.ingredients.indexOf('flour');
+    return dessert;
+  });
 };
 
 // given an array of tweet objects, return a new array of strings
