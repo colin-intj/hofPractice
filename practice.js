@@ -79,7 +79,9 @@ var cookiesOnly = function(desserts) {
 
 // rebuild the getUserTweets function from above with _.filter instead
 var filterUserTweets = function(tweets, user) {
-
+  return _.filter(tweets, function(tweet) {
+    return tweet.user === user;
+  });
 };
 
 /*
