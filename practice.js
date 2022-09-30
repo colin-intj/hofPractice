@@ -137,7 +137,11 @@ var allUserMessages = function(tweets) {
 
 */
 var applyCoupon = function(groceries, coupon) {
-
+  return _.map(groceries, function(item) {
+    var price = +item.price.slice(1);
+    item.salePrice = '$' + (price - price * coupon).toFixed(2);
+    return item;
+  });
 };
 
 /*
