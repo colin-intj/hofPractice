@@ -111,7 +111,9 @@ var glutenFree = function(desserts) {
 // given an array of tweet objects, return a new array of strings
 // containing only the message properties.
 var allUserMessages = function(tweets) {
-
+  return _.map(tweets, function(tweet) {
+    return tweet.message;
+  });
 };
 
 // use _.map to return an array of items with their sale prices, with a new property
