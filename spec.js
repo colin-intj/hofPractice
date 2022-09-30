@@ -194,6 +194,7 @@
           it('should return an array', function() {
             expect(Array.isArray(startsWith(testFruits, 'd'))).to.equal(true);
           });
+          // eslint-disable-next-line max-len
           it('should return an array containing strings starting with the given letter', function() {
             var startsWithP = startsWith(testFruits, 'p');
             var startsWithA = startsWith(testFruits, 's');
