@@ -210,11 +210,5 @@ var ninetiesKid = function(movies) {
 var movieNight = function(movies, timeLimit) {
   return _.reduce(movies, function(accumulator, movie) {
     return accumulator || movie.runtime < timeLimit;
-    /*
-    if (accumulator || movie.runtime < timeLimit) {
-      return true;
-    }
-    return false;
-    */
   }, false);
 };
